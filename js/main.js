@@ -105,34 +105,31 @@ function homeIntro() {
     ease: "power4.out",
   })
     .from(
-      "[data-title-overflow]",
+      ".hero__name",
       {
-        duration: 0.7,
+        duration: 0.8,
         yPercent: 100,
-        stagger: { amount: 0.2 },
         ease: "power4.out",
       }
+    )
+    .from(
+      ".hero__subtitle",
+      {
+        duration: 0.8,
+        yPercent: 100,
+        ease: "power4.out",
+      },
+      "-=0.5"
     )
     .from(
       ".hero__title .bottom__right",
       {
         duration: 1,
-        yPercent: 100,
+        yPercent: 50,
         opacity: 0,
         ease: "power4.out",
       },
-      "<20%"
-    )
-    .set(".hero__title .overflow", { overflow: "unset" })
-    .from(
-      ".hero__title__mobile",
-      {
-        duration: 0.7,
-        yPercent: 100,
-        stagger: { amount: 0.2 },
-        ease: "power4.out",
-      },
-      "-=1.4"
+      "-=0.4"
     );
 }
 
@@ -229,16 +226,5 @@ function homeAnimations() {
 // Hero Text Dash Animation
 // ============================================
 function heroTextAnimation() {
-  if (window.innerWidth > 768) {
-    gsap.to(".hero__title__dash.desktop", {
-      scrollTrigger: {
-        trigger: ".hero__title",
-        scrub: true,
-        start: "-8% 9%",
-        end: "110% 20%",
-      },
-      scaleX: 4,
-      ease: "none",
-    });
-  }
+  // No dash animation needed with simplified hero
 }
