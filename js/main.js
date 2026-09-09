@@ -12,6 +12,13 @@ const footer = document.getElementById("js-footer");
 const emailButton = document.querySelector("button.email");
 const toCopyText = document.querySelector(".to-copy span");
 const loader = document.querySelector(".loader");
+const projectsSection = document.querySelector("[data-projects-section-1]");
+const contactSection = document.querySelector(".home__contact");
+
+// Keep work samples near the end without changing the page's layout model.
+if (projectsSection && contactSection) {
+  contactSection.before(projectsSection);
+}
 
 // ============================================
 // Time Component
